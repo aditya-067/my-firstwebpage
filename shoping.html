@@ -18,17 +18,29 @@
         /* border: 2px solid black; */
         margin: 0%;
          /* background-color:#ffffff; */
-         
+    }
+
+
+
+    @keyframes adslide
+    {
+
+      from{right: 0px;}
+      to{right: 13700px;}
+
 
     }
+
+
     header{
         width: 100%;
         height: 80px;
         background-color: #000418c7;
         /* border-radius: 20%; */
-        margin: auto;
-        
+        margin: auto;     
     }
+
+
     header div{
         display:inline;
         color: white;
@@ -180,6 +192,19 @@ transform:scale(1.20);
   padding: 30px;
 }
 
+.imgads{
+  width: 100%;
+  margin-left: 0px;
+  position: relative;
+  animation: adslide 50s linear infinite alternate ;
+
+}
+
+#imgbox
+{
+  display: flex;
+  width: 1000%;
+}
 
 </style>
 <body>
@@ -205,7 +230,14 @@ transform:scale(1.20);
 </ol>
 
 </nav>
-    <div id="adv"><img src="image/ad.jpg" alt=""></div>
+<div id="imgbox">
+    <div id="adv"><img src="image/ad.jpg"  class="imgads"></div>
+     <div id="adv"><img src="image/ad2.jpg"  class="imgads"></div>
+      <div id="adv"><img src="image/ad3.jpg"  class="imgads"></div>
+       <div id="adv"><img src="image/ad4.jpg"  class="imgads"></div>
+        <div id="adv"><img src="image/ad5.jpg"  class="imgads"></div>
+         <div id="adv"><img src="image/ad6.jpg"  class="imgads"></div>
+         </div>
     <main>
         <diV> <img src="image/c.jpg"><br>VW 80 cm (32 inches) Frameless Series HD Ready Android Smart LED TV VW32S</diV>
         <diV> <img src="image/am.jpg"><br>Up to 80% off | Electronics & Accessories</diV>
