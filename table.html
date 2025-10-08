@@ -3,9 +3,83 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Table in HTML</title>
 </head>
 <body>
+    <header>
+        <h1>Table in HTML</h1>
+    </header>
+    <style>
+
+        body{
+background-color:#31353d;
+color:white;
+}
+
+        #report{
+            width: 70%;
+            background: gray;
+            margin: auto;   
+        }
+
+        #report table{
+            margin: auto;
+            width: 100%;
+            overflow-x: scroll;
+        }
+
+        #report table td {
+            color: rgb(66, 11, 117);
+            transition:2s;
+            cursor:url(image/cursor.png),auto;
+        }
+
+        #report table td:hover{
+            background: black;
+            color: white;
+        }
+        #report table tr :hover
+        {
+            background: rgb(226, 102, 20);
+        }
+
+    </style>
+    <main>
+        <div id="report">
+            <table border="1" cellpadding="10" bgcolor="#d8f56e">
+                <caption>Modern School</caption>
+                <tr bgcolor="purple" style= "color:white;text-align: center;">
+                    <td colspan="6">Student Mark List</td>
+                </tr>
+                <tr>
+                    <th>Roll No</th><th>Name</th><th>math</th><th>English</th><th>Science</th><th>Computer</th>
+                </tr>
+                <tr>
+                    <td>101</td><td>raj</td><td>86</td><td>78</td><td>89</td><td>90</td>
+                </tr>
+                  <tr>
+                    <td>102</td><td>Amit kumar</td><td>74</td><td>78</td><td>89</td><td>90</td>
+                </tr>
+                  <tr>
+                    <td>103</td><td>Harri</td><td>94</td><td>78</td><td>89</td><td>90</td>
+                </tr>
+                  <tr>
+                    <td>104</td><td>Rishi</td><td>78</td><td>78</td><td>92</td><td>97</td>
+                </tr>
+                  <tr>
+                    <td>105</td><td>aakash</td><td>88</td><td>98</td><td>89</td><td>97</td>
+                </tr>
+
+
+
+
+
+
+
+            </table>
+        </div>
+
+    </main>
     
 </body>
 </html>
