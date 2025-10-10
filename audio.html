@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audio</title>
+</head>
+<style>
+    #main audio{
+        display: none;
+     }
+
+    #icon{
+        height: 20px;
+        width: 80px;
+        cursor: pointer;
+        /* background: red; */
+        display: block;
+    }
+    #icon:hover audio
+    {
+        display: block;
+    }
+    #main{
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        
+    }
+    h1{
+        text-align: center;
+        color: rgb(119, 119, 222);
+        -webkit-text-stroke: 0.2px rgb(119, 119, 222);
+        text-shadow: 2px 2px rgb(26, 26, 57);
+       
+    }
+    body{
+        /* background: rgb(0, 0, 0); */
+        background-image: url(image/7dDt.gif);
+    }
+</style>
+<body>
+    <h1><b>Using Media in Web Page</b></h1>
+    
+    <!--
+    Audio:
+    mp3,ogg,wav
+    
+    video
+    webm,mp4,ogg
+    
+    -->
+
+    <div id="main">
+        <span id="icon" style="font-size: 50px;"><img src="image/a1.gif" style="opacity: 40%;">
+            <audio controls autoplay loop mute width="200" height="200" 
+            source src="audio/a1.mp3" type="audio/mpeg">
+        your browser does not support this update browser....
+    </audio>
+        </span>
+    </div>
+    
+</body>
+</html>
