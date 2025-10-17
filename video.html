@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video in HTML</title>
+  
+</head>
+<style>
+    html
+    {
+        overflow-y: scroll;
+
+    }
+
+              body{
+        background: rgb(0, 0, 0);
+        
+    } 
+
+    header{
+        width: 100%;
+        height: 700px;
+        /* background: red; */
+        margin: auto;
+        margin-bottom: 40px;
+    }
+    main p
+    {
+        text-align: justify;
+        padding: 40px;
+        /* background: white; */
+        border-bottom: 1px black solid;
+        color: white;
+    }
+    header video{
+        width: 100%;
+        opacity: 0.60;      
+    }
+
+    #bannertext{
+        position: fixed;
+        font-size: 100px;
+        font-family: Arial, Helvetica, sans-serif;
+        top: 140px;
+        left: 40%;
+        color: white;
+        opacity: 1;
+        text-shadow: 5px 5px 5px black;
+        z-index: 10;
+        text-align: center;
+        
+        
+    }
+    #loader
+    {
+        width: 100px;
+        height: 100px;
+        
+        position: absolute;
+        top: 320px;
+        left: 600px;
+        border-top: 10px red ridge;
+        border-left: 10px red ridge;
+        border-radius: 200px;
+        animation: run  1s infinite;
+    }
+    @keyframes run
+    {
+        from{transform: rotate(0deg);}
+        to{transform: rotate(360deg);}
+
+    }
+    h3{
+        color: rgb(221, 197, 148);
+        font-size: x-large;
+    }
+    ul li{
+        color: white;
+    }
+    footer{
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        height: 100px;
+        background: rgb(193, 151, 62);
+        color: white;
+        font-size: x-large
+        
+        
+        
+    }
+
+</style>
+<!-- <script>
+    setTimeout("location.href='https://yahoo.com'",400000)
+</script> -->
+
+
+<body>
+    <!-- <div id="loader"></div> -->
+    <div id="bannertext">Anime</div>
+    <div style="height: 300px; width: 100%;">
+    <video src="video/a2.mp4" type="video/mp4" video width="1500" height="240" autoplay>
+        No support For video:-
+    </video>
+    </div>
+    <main>
+        <p>
+            Anime is a Japanese style of hand-drawn and computer-generated animation, but outside of Japan, it specifically refers to animation from Japan. Known for distinct art styles like large expressive eyes, it spans all genres and is enjoyed by audiences of all ages. Anime has a long history, dating back to the early 1900s, and has become a significant part of global pop culture. 
+        </p>
+        <p>Anime is a diverse and globally popular style of animation that originates from Japan. It is known for its distinct visual style, complex storytelling, and a vast range of genres that appeal to all ages. </p>
+        <h3>Defining characteristics</h3> 
+        <ul>
+            <li>Unique art styles: While not all anime looks the same, many series feature characters with large, expressive eyes, dynamic and colorful hair, and highly detailed background art.</li>
+            <li>Emphasis on visuals: Unlike Western animation, which traditionally prioritized fluid movement, anime often uses limited animation techniques to focus more on detailed settings, intricate character designs, and dynamic "camera effects" like panning and zooming</li>
+            <li>Diverse genres and themes: Anime covers almost every imaginable genre, including action, adventure, romance, comedy, horror, and science fiction. Unlike many Western cartoons, anime isn't just for children and often explores complex, mature themes.</li>
+            <li>Adaptations from manga: Many popular anime series are adaptations of Japanese comic books, known as manga.</li>
+            <video src="video/a1.mp4" type="video/mp4" video width="1500" height="240"  autoplay muted></video>
+             <h3>History</h3>
+             <li>Early origins (early 20th century): The first Japanese animations appeared in the 1910s, influenced by Western animation techniques.</li>
+             <li>Post-WWII rise: After the war, anime and manga began to flourish. Legendary artist Osamu Tezuka, known as the "God of Manga," helped popularize the medium in the 1960s by pioneering TV animation with influential works like Astro Boy.</li>
+             <li>International boom (1980s–1990s): Series like Dragon Ball Z and Sailor Moon gained widespread international popularity, solidifying anime as a global phenomenon.</li>
+             <li>Streaming era (2010s–present): The rise of streaming services has made anime more accessible than ever, driving its global growth. In 2024, the series Jujutsu Kaisen was officially recognized by Guinness World Records as the "most in-demand animated TV show".</li>
+             <h3>Common demographics</h3>
+             <li>Shonen: Aimed at young boys (ages 12–18), often featuring action, adventure, and themes of friendship. Examples include One Piece and Jujutsu Kaisen.</li>
+             <li>Shoujo: Aimed at young girls (ages 12–18), with a focus on romance, drama, and personal growth. Sailor Moon and Fruits Basket are classic examples.</li>
+             <li>Seinen: Aimed at adult men (ages 18+), often with more complex, mature, and psychological themes. Notable examples include Monster and Ghost in the Shell.</li>
+             <li>Josei: Aimed at adult women (ages 18+), portraying more realistic and nuanced relationships and life experiences. The series Nana is an example of this demographic.</li>
+             <li>Kodomomuke: Aimed at very young children. A classic example is Doraemon.</li>
+             <video src="video/a3.mp4" type="video/mp4" video width="1500" height="240" autoplay></video>
+             <h3>Popular and influential anime series</h3>
+             <li>Attack on Titan: A dark fantasy series with a thrilling and complex plot.</li>
+             <li>Death Note: A psychological thriller about a brilliant high school student who finds a notebook that can kill people.</li>
+             <li>One Piece: A long-running adventure series following a pirate crew in search of a legendary treasure.</li>
+             <li>Fullmetal Alchemist: Brotherhood: A highly acclaimed action-adventure fantasy series with a profound and emotional storyline.</li>
+             <li>Demon Slayer: Kimetsu no Yaiba: A dark fantasy action series praised for its high-quality animation.</li>
+             <li>Jujutsu Kaisen: A supernatural action series that has achieved immense global popularity in recent years.</li>
+        </ul>
+      
+    </main>
+<footer>
+    <div>About us</div>
+<div>Contact us- xx21- xx12- xx78</div>
+<div>Visit us www.anime.com</div>
+<div>Help us</div>
+</footer>
+    
+</body>
+</html>

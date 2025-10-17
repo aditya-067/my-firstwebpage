@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <style>
+        
+          body{
+        background: rgb(21, 18, 32);
+        margin-top: 100px;
+    }
+
+
+   @keyframes run
+    {
+        from{transform: rotate(0deg);}
+        to{transform: rotate(360deg);}
+
+    }
+
+
+
+          #loader
+    {
+        width: 50px;
+        height: 50px;
+        margin: auto;
+        position: absolute;
+        top: 500px;
+        left: 50%;
+        border-top: 10px rgb(255, 255, 255) ridge;
+        border-left: 10px rgb(255, 255, 255) ridge;
+        border-radius: 200px;
+        animation: run  0.8s infinite;}
+
+
+        #img{
+            display: flex;
+            justify-content: center;
+            
+            width: 20%;
+            margin: auto;
+
+            height: 280px;
+            /* background: rebeccapurple; */
+            background-image: url(image/download\ \(1\)\ \(1\).gif);
+            background-size: cover;
+        }
+        #text{
+            width: 50%;
+            color: white;
+            margin: auto;
+            text-align: center;
+            padding-left:60px ;
+            font-size: x-large;
+        }
+
+    </style>
+    <script>
+    setTimeout("location.href='video.html'",2000)
+</script>
+</head>
+<body>
+    <div id="img"></div>
+    <div id="text" class="animate__animated animate__pulse animate__repeat-2" >Loading...</div>
+    <div id="loader"></div>
+    
+</body>
+</html>
