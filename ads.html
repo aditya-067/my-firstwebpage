@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    *{
+        margin: 0%;
+        
+    }
+    @keyframes ch
+     {
+    10%{background-image:url(image/g.gif);}
+    20%{background-image:url(image/g1.gif);}
+    30%{background-image:url(image/g2.gif);}
+    40%{background-image:url(image/g3.png);}
+    50%{background-image:url(image/g4.gif);}
+    60%{background-image:url(image/g5.gif);}
+    70%{background-image:url(image/g6.gif);}
+    80%{background-image:url(image/g7.gif);}
+    90%{background-image:url(image/g8.gif);}
+    100%{background-image:url(image/g9);}
+    }
+    header{
+        border: 0px black solid ;
+        width: 80%;
+        height: 600px;
+        margin: auto;
+        margin-top: 114px;
+        padding: 5px;
+        text-align: right;
+        overflow: hidden;
+        background-image: url(image/);
+        /* background-size: contain;
+        background-size: cover; */
+        background-size: 100% 100%;
+        animation: ch 20s infinite;
+
+    }
+
+    .pic{
+        width: 100%;
+        height: 100%;
+       }
+       header h1 {
+        color: red;
+        font-size: 30px;
+        margin: 10px;
+        font-family: Arial, Helvetica, sans-serif;
+        content: "unparsed text";
+       }
+
+       @keyframes test {
+        10%{content:"Todays News" ;}
+         30%{content:"Kerala govt announces CM's Gold Cup for school sports, to construct houses of 50 meritorious students" ;}
+          40%{content: "Javier Milei triumphs in Argentine midterm elections closely watched by US";}
+           50%{content:"Hurricane Melissa could reach Category 5, threatens catastrophic flooding across north Caribbean | Key updates" ;}
+            50%{content:"Madhya Pradesh A fence in the forest: Vulnerable tribal group in Shivpuri fights for its rights." ;}
+             60%{content:"WorldWhat has the U.S. clarified on H-1B visas? | Explained" ;}
+              70%{content: "Data Chennai stood out for its severe pollution surge during Deepavali.";}
+               80%{content:"World Louvre jewel heist: Two suspects in case arrested in Paris, report says." ;}
+                90%{content: "In 4-Page Suicide Note, Doctor Who Was Raped Accused MP Of Pressuring Her.";}
+                 100%{content:"Afghanistan To Echo India's Indus Water Move, Stop River Flowing Into Pak." ;}
+       }
+       .main{
+        width: 100%;
+        background: black;
+        padding: 20px;
+        color: white;
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: 20px;
+        transition: 2s;
+
+       }
+       .main::after
+       {
+        content: "The Main content";
+        animation: test 10s infinite;
+       }
+       body{
+        background: rgb(61, 61, 71);
+       }
+
+</style>
+<body>
+    <div class="main">News: ---- </div>
+    <header>
+        <h1>Ads</h1>
+    </header>
+    
+</body>
+</html>
