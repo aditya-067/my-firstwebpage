@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #main{
+        width: 50%;
+        background: rgb(93, 93, 99);
+        margin: auto;
+        padding: 20px;
+        text-align: center;
+        box-shadow: 10px 10px 10px black;
+        border-radius: 30px;
+        margin-top: 100px;
+        
+    }
+
+    table{
+        margin: auto;
+        width: 100%;
+    }
+
+</style>
+<body>
+    <div id="main">
+        <form action="http://tataplay/user/login.php" method="get">
+            <table border="0" cellpadding="10">
+                <caption><h1>Registration</h1></caption>
+
+                <tr>
+                    <td><label for="name">Name</label></td>
+                    <td><input id="name" type="text" required placeholder="Type Name here" title="Type your name"></td>
+                </tr>
+
+
+
+
+                     <tr>
+                    <td><label for="age">Age</label></td>
+                    <td><input id="age" type="number" min="18" max="30" placeholder="Type Age between 18-30" title="Type Age"></td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td><label for="mess">About You</label></td>
+                    <td><textarea  id="mess" cols="40" rows="10">Type About Your Detail....</textarea></td>
+                </tr>
+
+
+
+
+
+
+
+
+                <tr>
+                    <td><label for="DOB">DOB</label></td>
+                    <td><input id="DOB" type="date"></td>
+                </tr>
+
+
+
+
+
+                
+                <tr>
+                    <td><label for="time">Time</label></td>
+                    <td><input type="time"></td>
+                </tr>
+
+
+
+
+
+                <tr>
+                    <td><label for="gen">Gender</label></td>
+
+                    <td>
+                        Male <input name="gen" type="radio" value="male">
+                        Female <input name="gen" type="radio" value="Female">
+                        Other <input name="gen" type="radio" value="Other">
+                    </td>
+
+
+                </tr>
+
+
+
+                    <tr>
+                    <td><label for="Hobby">Hobby</label></td>
+
+                    <td>
+                        Dancing <input  type="checkbox" value="Dancing">
+                        Gaming <input  type="checkbox" value="Gaming">
+                        Animation <input  type="checkbox" value="Animation">
+                    </td>
+
+
+                </tr>
+                
+
+
+
+
+                <tr><td></td>
+                    <td>
+                        <input type="submit" value="Register">
+                        <input type="reset">
+                    </td>
+                </tr>
+
+            </table>
+
+
+        </form>
+    </div>
+    
+</body>
+</html>
