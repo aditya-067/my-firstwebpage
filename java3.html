@@ -26,7 +26,7 @@
         transition: 0.50s;
     }
 </style>
-<body>
+<body onLoad="show()">
     <div id="box">box</div>
     <div id="tooltip"></div>
     <script>
@@ -64,6 +64,19 @@
             t.innerHTML=""
             t.className=""
         }
+
+        function redirect(){
+            location.href="https://aditya-067.github.io/my-firstwebpage/"
+        }
+
+        function show ()
+        {
+            alert("you will be redirected in our new site ....\n since this site is under construction")
+        }
+
+        setTimeout("redirect()" ,10000)
+
+
         document.title="Ready"
 
     </script>

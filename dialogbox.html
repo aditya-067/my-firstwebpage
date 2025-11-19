@@ -21,11 +21,14 @@
 </style>
 <body>
     <div id="add1"></div>
+    <audio src="audio/notification-error-427345.mp3" type="audio/mpeg"></audio>
     <script>
         // Creating Custom Dilog box for Displaying Digital Content 
 
         // var add = document.getElementById("add1")
         var add = document. createElement("div")
+        var s = document.getElementById("s")
+        //var addpic
         document.body.appendChild(add)
 
 
@@ -36,7 +39,16 @@
             add.style.left="30%"
             add.innerHTML="<button onclick='closediloge()' style='cursor:pointer;margin-left:100%;border-radius:100px;height:30px;margin-top:1px'>close</button>"
             add.innerHTML+="<h3>Sale on Amzone</h3> <hr/>"
-            add.innerHTML+="<img src='image/prime1.gif'>"
+            add.innerHTML+="<img id='addpic' src='image/prime1.gif'>"
+            s.play()
+
+            addpic = document.getElementById("addpic")
+            addpic.onclick = function()
+            {
+                //Redirection 
+                location.href="https://amazone.com"
+            }
+
         }
 
         function closediloge()
