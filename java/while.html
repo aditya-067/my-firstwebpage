@@ -8,15 +8,19 @@
 <style>
     #main{
         width: 200px;
-        margin: 30px;
-        box-shadow: 10px 10px 10px gray;
+        margin: auto;
+        margin-top: 600px;
+        /* box-shadow: 10px 10px 10px gray; */
     }
     #main button{
         width: 40px;
         height: 40px;
         padding: 2px;
+        
         border-radius: 30px;
+        margin: 5px;
         box-shadow: 5px 5px 5px gray;
+        cursor: pointer;
     }
 </style>
 <body>
@@ -28,15 +32,20 @@
             var b = 0
 
 
-            while(a<=29)
+            while(a<=7)
         {
             r = Math.round(Math.random()*255)
             g = Math.round(Math.random()*255)
             b = Math.round(Math.random()*255)
 
             mycolor ="rgb("+r+" , "+g+" , "+b+")"
-            document.write("<button style='background:"+mycolor+"''></button>")
+            document.write("<button onclick='changebackground(this)' style='background:"+mycolor+"''></button>")
             a++
+        }
+
+        function changebackground(t)
+        {
+            document.body.style.background = t.style.background
         }
         </script>
 
