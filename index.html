@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>HomePage</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Asimovian&family=Bebas+Neue&family=Gravitas+One&family=Kablammo&family=Poppins:wght@500&display=swap" rel="stylesheet">
@@ -324,7 +324,7 @@ body{
 
 #imgbox{
   width: 80%;
-  height: 1200px;
+  /* height: 1200px; */
 
   margin: auto;
   
@@ -422,58 +422,120 @@ transform: scale(1.0) translatey(-5px);
         }
 
 
-        @media only screen and (max-width: 600px) {
+
+@media only screen and (max-width: 900px) {
+  
+  header {
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    height: auto;
+    gap: 12px;
+    padding: 12px;
+  }
+
+  nav { width: 45% !important; margin-left: 12px; }
+
+
+  #container {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 20px;
+    gap: 18px;
+  }
+
+
+  #box, #box2 {
+    width: 100% !important;
+    margin-left: 0 !important;
+  }
+
+
+  #img { width: 140px; height: 140px; margin: 0 auto; }
+
+ 
+  #content { margin-left: 0 !important; width: 100% !important; box-sizing: border-box; }
+
+ 
+  .typing-text { font-size: 22px; min-width: auto; }
+
+
+  .social-icons { display: flex; gap: 8px; margin-right: 12px; }
+}
+
+
+@media only screen and (max-width: 600px) {
 
   header {
     flex-direction: column;
     height: auto;
-    gap: 10px;
+    align-items: center;
+    padding: 14px 8px;
   }
 
+
   nav {
-    width: 90% ;
-   padding: auto;
-   margin: auto;
+    width: 95% !important;
+    margin: 6px auto;
     height: auto;
+    padding: 10px;
   }
+
 
   #container {
     flex-direction: column;
+    width: 95%;
+    padding: 12px;
+    box-sizing: border-box;
+    margin: 12px auto;
+  }
+
+
+  #box, #box2 {
+    width: 100% !important;
     height: auto;
-    padding: 10px;
+    margin-left: 0 !important;
   }
 
-  #box {
-    width: 100%;
-    height: auto;
-    margin-bottom: 20px;
-  }
 
-  #box2 {
-    width: 100%;
-    margin-left: 0;
-    text-align: center;
-  }
+  #img { width: 120px; height: 120px; margin: 12px auto; display: block; }
 
-  #img {
-    margin: auto;
-  }
-
+ 
   #content {
-    margin-left: 0;
-    width: 100%;
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding: 18px !important;
+    border-radius: 12px;
   }
 
-  .works {
-    width: 80%;
-    margin-left: 0;
+ 
+  .circle,
+  .circle2,
+  .circle3,
+  .circle4,
+  .circle5,
+  .circle6 {
+    display: none !important;
   }
 
-  #imgbox {
-    height: auto;
-    padding: 10px;
-  }
+  
+  #hire { width: 70% !important; margin: 14px auto !important; }
+
+
+  .works { width: 92% !important; margin: 12px auto !important; }
+
+
+  #imgbox { padding: 12px !important; }
 }
+
+
+@media only screen and (max-width: 400px) {
+  .typing-text { font-size: 18px !important; }
+  .social-icons a { width: 2.2rem; height: 2.2rem; font-size: 0.95rem; margin: 0.6rem 0.6rem 1rem 0; }
+  nav ol li { padding: 8px 6px; font-size: 14px; display: block; } 
+}
+
 
 
 </style>
@@ -482,7 +544,7 @@ transform: scale(1.0) translatey(-5px);
   <nav>
 <ol>
 <li><a href="#">Home</a></li>
-<li><a href="practice.html">Practice</a></li>
+<!-- <li><a href="practice.html">Practice</a></li> -->
 
 <li><a href="http://www.google.com">Search</a></li>
 
@@ -594,7 +656,7 @@ I am a dedicated and results-oriented professional with a strong background in s
       <div class="works"><a href="mywork.html"><img src="image/cat2.jpg" width="95%"></a>My Personal Work </div>
        <div class="works"><a href="practice2.html"><img src="image/notes.jpg" width="95%"></a>Classwork</div>
 
-         <div class="works"><a href="projec.html"><img src="image/pr.jpg" width="95%"></a>Projects</div>
+         <div class="works"><a href="project.html"><img src="image/pr.jpg" width="95%"></a>Projects</div>
   
 
 
