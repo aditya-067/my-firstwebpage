@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+
+    <style>
+        #container{
+            width: 500px;
+            height: 300px;
+            overflow: hidden;
+            /* border: 2px solid black; */
+        }
+
+        #box{
+            width: 3500px; 
+            height: 300px;
+            display: inline-block;
+            position: relative; 
+            left: 0;
+            transition: 0.4s ease; 
+        }
+
+        #box img{
+            width: 500px;
+            height: 300px;
+        }
+    </style>
+</head>
+
+<body>
+
+<div id="container">
+    <div id="box">
+        <img src="image/p1.jpg">
+        <img src="image/p2.jpg">
+        <img src="image/p3.jpg">
+        <img src="image/p4.jpg">
+        <img src="image/p5.jpg">
+        <img src="image/p6.jpg">
+        <img src="image/p7.jpg">
+    </div>
+</div>
+
+<br>
+
+<input type="range" min="0" max="6" value="0" id="slider1">
+
+<script>
+    var slider1 = document.getElementById("slider1");
+    var box = document.getElementById("box");
+
+    slider1.oninput = function () {
+       var move = this.value * 500; 
+        box.style.left = "-" + move + "px";
+    };
+</script>
+
+</body>
+</html>

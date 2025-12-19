@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+
+    #container{
+        width: 500px;
+        height: 300px;
+        /* background-color: red; */
+        overflow-y: hidden;
+    }
+
+    #box{
+    width: 5000px;
+    height: 300px;
+    display: inline-block;
+    /* background-color: black; */
+}
+#box img{
+    width: 10%;
+    height: 100%;
+    position: relative;
+}
+    
+
+
+</style>
+<body>
+   <div id="container">
+    <div id="box">
+        <img src="image/p1.jpg" alt="">
+        <img src="image/p2.jpg" alt="">
+        <img src="image/p3.jpg" alt="">
+        <img src="image/p4.jpg" alt="">
+        <img src="image/p5.jpg" alt="">
+        <img src="image/p6.jpg" alt="">
+        <img src="image/p7.jpg" alt="">
+    </div>
+   </div> 
+  <input type="range" max="100" min="10" value="50" id="slider1">
+
+  <script>
+    var slider1 = document.getElementById("slider1")
+    var container = document.getElementById("container")
+    var box = document.getElementById("box")
+
+  
+
+    
+    slider1.onchange = function()
+    {
+        document.title = this.value 
+        container.innerHTML=this.value
+        box.style.left=this.value+"px"
+    }
+  </script>
+</body>
+</html>
