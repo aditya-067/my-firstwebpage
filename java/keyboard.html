@@ -13,6 +13,7 @@
         }
         body{
             background-color: rgb(250, 250, 250);
+            overflow-x: hidden;
         }
     </style>
 </head>
@@ -24,6 +25,7 @@
         bird.src="image/goku2.gif"
         bird.className="birdstyle"
         var L = 0
+        var speed = 5
         function f1(e)
         {
             k = e.keyCode
@@ -36,27 +38,41 @@
                 
                 
                 case  39:
-                L=L+5
+               if(L<= window.innerWidth-150){
+                bird.style.transform = "rotate(0deg)"
+                L=L+speed
+               }
                 bird.style.left = L+"px"
+                document.title = L
 
                 break;
 
 
                 case 37:
-                L=L-5
+                    if(L>0)
+                    {
+                        L=L-speed 
+                         bird.style.transform = "rotateY(-180deg)"
+                    }
+                // L=L-5
                 bird.style.left = L+"px"
                 
                 break;
                 case 38:
 
-                 L=L-5
+                 L=L-speed
                 bird.style.top = L+"px"
                 break;
                 case 40:
 
-                 L=L+5
+                 L=L+speed
                 bird.style.top = L+"px"
                 break;
+                
+                case 32:
+
+                speed++
+                document.title = speed;
             }
         }
         document.title ="No Error"
