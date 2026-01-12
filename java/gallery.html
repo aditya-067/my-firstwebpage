@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Photu Gallery</title>
+</head>
+<body>
+    <style>
+        /* @keyframes zoom */
+        /* {
+            from{transform: scale(5);}
+            to{transform: scale(1);}
+        } */
+
+        body{
+            background-color: black;
+        }
+       
+        header{
+            /* background-image: url(image/p1.jpg); */
+            color: white;
+            width: 90%;
+            text-align: center;
+            font-family: arial black;
+            font-size: 50px;
+            height: 100px;
+            box-shadow: 10px 8px 20px rgb(249, 236, 122);
+            margin: auto;
+            margin-bottom: 20px;
+            background-color: black;
+        }
+        .pic{
+            width: 50%;
+            box-shadow: 5px 5px 20px rgb(249, 236, 122);
+            margin: 60px;
+            transition: 1.50s;
+
+        }
+        main{
+            /* display: flex; */
+            width: 90%;
+            margin: auto;
+            /* flex-wrap:wrap ;
+            animation: zoom 2s; */
+        }
+
+        main
+{
+display:flex;
+width:95%;
+
+margin:auto;
+flex-wrap:wrap;
+}
+
+.pic:hover
+{
+transform:scale(1.20);
+border-radius:0px;
+}
+
+</style>
+<header> <div >Web Photo Gallery </div></header>
+
+
+   
+
+    <main>
+
+<img src="image/p1.jpg" alt="" class="pic">
+<img src="image/p2.jpg" alt=""class="pic">
+<img src="image/p3.jpg" alt=""class="pic">
+<img src="image/p4.jpg" alt=""class="pic">
+<img src="image/p5.jpg" alt=""class="pic">
+<img src="image/p6.jpg" alt=""class="pic">
+
+    <script>
+        var list =document.getElementsByTagName("img")
+        var s = 0;
+        for(var i = 0; i<list.length;i++)
+    {
+        list[i].onclick=function()
+        {
+          this.style.transition="0.10s"  
+          this.style.transform = "scale(1.50)"
+        }
+        list[i].onmouseout=function()
+        {
+            this.style.transform = "scale(1)"
+            this.style.transition="1.50s"
+        }
+    }
+
+    function f1(e)
+    {
+        s = Math.round(window.scrollY)
+
+        if(s>250){list[0].style.transform="scale(0)";list[0].style.opacity="0"}
+        else{list[0].style.transform="scale(1)";list[0].style.opacity="1"}
+
+
+         if(s>750){list[1].style.transform="scale(0)";list[0].style.opacity="0"}
+        else{list[1].style.transform="scale(1)";list[0].style.opacity="1"}
+
+
+        
+         if(s>1200){list[2].style.transform="scale(0)";list[0].style.opacity="0"}
+        else{list[2].style.transform="scale(1)";list[0].style.opacity="1"}
+
+
+        
+         if(s>1700){list[3].style.transform="scale(0)";list[0].style.opacity="0"}
+        else{list[3].style.transform="scale(1)";list[0].style.opacity="1"}
+
+
+
+        
+         if(s>2100){list[4].style.transform="scale(0)";list[0].style.opacity="0"}
+        else{list[4].style.transform="scale(1)";list[0].style.opacity="1"}
+
+        if(s>2500){list[5].style.marginLeft="200%"}
+        else{list[5].style.marginLeft="60px"}
+
+
+
+        document.title= s
+    }
+
+    window.addEventListener("scroll",f1)
+    </script>
+</body>
+</html>

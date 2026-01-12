@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+     <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(48, 48, 48);
+        }
+ 
+        #frame{
+            width: 200px;
+            height: 200px;
+            overflow: hidden;
+            margin: auto;
+            border: 2px solid whitesmoke;
+            border-radius: 20px;
+            margin-top: 200px;
+        } 
+        #box{
+           width: 1400px;
+           height: 200px;
+           display: inline-block;
+           position: relative;
+           left: 0;
+           transition: 0.4s ease;
+            
+            
+        }
+
+        #box img{
+            width: 200px;
+            height: 200px;
+            
+        }
+        #btn {
+          width: 60px;
+          height: 30px;
+          background-color: rgb(250, 106, 183);
+          color: whitesmoke;
+          border-radius: 20px;
+          border: 2px solid whitesmoke;
+         /* margin-top: 30px;
+          margin-left: 50%;
+          text-align: center; */
+            /* color: #fff;
+            background-color: black; */
+              box-shadow: 10px 10px 10px black;
+            
+        }
+        #slide
+        {
+             width: 60px;
+          height: 30px;
+          background-color: rgb(250, 106, 183);
+          color: whitesmoke;
+          border-radius: 20px;
+          border: 2px solid whitesmoke;
+         /* margin-top: 30px;
+          margin-left: 45%;
+          text-align: center; */
+            /* color: #fff;
+            background-color: black; */
+              box-shadow: 10px 10px 10px black;
+            
+        }
+
+        #btnbox{
+            width: 50%;
+            height: 100px;
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+
+    </style>
+</head>
+<body >
+    <div id="frame">
+
+  
+    <div id="box" >
+        <img src="image/p1.jpg" alt=""  class="img">
+        <img src="image/p2.jpg" alt="" class="img">
+        <img src="image/p3.jpg" alt="" class="img">
+        <img src="image/p4.jpg" alt="" class="img">
+        <img src="image/p5.jpg" alt="" class="img">
+        <img src="image/p6.jpg" alt="" class="img">
+        <img src="image/p7.jpg" alt="" class="img">
+     
+
+    </div>
+      </div>
+      <div id="btnbox">
+      <button id="slide">Move</button>
+       <button id="btn">Bounce</button>
+       </div>
+
+    <script>
+        var bouncebtn = document.getElementById("btn");
+        var box = document.getElementById("box")
+        var slidebtn = document.getElementById("slide");
+
+
+       var movee =0;
+       var imgWidth =200;
+       var totalImg = document.getElementsByClassName("img").length;
+        
+        
+        function f1()
+        {
+        var imgs = document.getElementsByClassName("img")
+
+        for(var i =0; i<imgs.length; i++){
+            imgs[i].classList.remove("animate__animated","animate__bounce");
+
+               void imgs[i].offsetWidth;
+                imgs[i].classList.add("animate__animated","animate__bounce");
+        }
+
+        };
+      
+       slidebtn.onclick = function (){
+            movee++;    
+
+            if (movee >= totalImg){ 
+
+                movee= 0;
+                }
+
+                box.style.left = -(movee * imgWidth) +"px";
+              
+          };
+
+
+
+         bouncebtn.addEventListener("click",f1);
+       setInterval(f1,1000);
+       document.title="ready";
+    </script>
+</body>
+</html>
