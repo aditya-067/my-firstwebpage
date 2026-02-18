@@ -11,10 +11,30 @@
         color: white;
       }
      
+      .cube{
+        position: absolute;
+        z-index: -1;
+        margin-bottom: 50px;
+        
+      }
+      .hero{
+        font-size:150px;
+          position: absolute;
+        z-index: 1;
+        top: 400px;
+        left: 30%;
+        font-weight: 500;
+        text-shadow: 5px 5px 5px black;
+        cursor: pointer;
+      }
     </style>
   </head>
   <body>
-    <h1>Big Hero 6</h1>
+    
+<script class="cube" type="module" src="https://unpkg.com/@splinetool/viewer@1.12.57/build/spline-viewer.js"></script>
+<spline-viewer url="https://prod.spline.design/03pmfGsm8cVgLo18/scene.splinecode"></spline-viewer>
+  </body>
+    <h1 class="hero">The Big Hero 6</h1>
 
 
 <div class="container text-center mt-5" >
@@ -47,6 +67,4 @@
 
 </div>
 
-
-  </body>
 </html>
