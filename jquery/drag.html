@@ -24,21 +24,33 @@ background:#111;
 #draggable-object{
 width:120px;
 height:120px;
-background:red;
+background:rgba(255, 76, 76, 0.83);
 color:white;
 display:flex;
 align-items:center;
 justify-content:center;
 font-weight:bold;
 cursor:move;
+border-radius: 30px;
+box-shadow: 0px 10px 30px rgba(255, 255, 255, 0.775);
+}
+h1{
+    color: whitesmoke;
+    position: absolute;
+    top: 50px;
+    font-size: 50px;
+    text-decoration:overline;
+    
+
 }
 </style>
 
 </head>
 <body>
 <h1>Try Draggable</h1>
+
 <div id="draggable-object">
-Drag Me (left-Right only)
+Drag Me
 </div>
 
 <script>
