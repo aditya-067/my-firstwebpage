@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document</title>
+
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"></script>
+
+<style>
+body{
+height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+background:#111;
+}
+
+#draggable-object{
+width:120px;
+height:120px;
+background:red;
+color:white;
+display:flex;
+align-items:center;
+justify-content:center;
+font-weight:bold;
+cursor:move;
+}
+</style>
+
+</head>
+<body>
+<h1>Try Draggable</h1>
+<div id="draggable-object">
+Drag Me (left-Right only)
+</div>
+
+<script>
+$(function(){
+
+$("#draggable-object").draggable({
+axis:"x",          
+containment:"body",
+cursor:"move",
+revert:true
+});
+
+});
+</script>
+
+</body>
+</html>
