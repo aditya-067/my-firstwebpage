@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Dragon Ball Z Universe - Cinematic</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+/* Body & Fonts */
+body{
+  background:#000 url("images/dragonballs.png") repeat;
+  color:#fff;
+  font-family:Arial, sans-serif;
+  overflow-x:hidden;
+}
+
+/* Navbar */
+.navbar{background:black;}
+.nav-link{transition:.3s;}
+.nav-link:hover{color:#ff7b00 !important;}
+.navbar-brand{color:#ff7b00 !important; font-weight:bold;}
+
+/* Hero */
+.hero{
+  height:90vh;
+  background:url("images/dragon-ball-chibi-goku-roasts-marshmallows-desktop-wallpaper-preview.jpg") center/cover no-repeat;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
+
+.saiyan-glow{
+  color:#ffb400;
+  text-shadow:0 0 10px #ffb400,0 0 20px #ff7b00,0 0 40px #ff7b00,0 0 80px #ff7b00;
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow{
+  from{text-shadow:0 0 10px #ffb400;}
+  to{text-shadow:0 0 40px #ff7b00;}
+}
+
+.btn-primary{
+  background:#ff7b00; border:none; transition:0.4s;
+}
+.btn-primary:hover{
+  box-shadow:0 0 20px #00e1ff,0 0 40px #00e1ff,0 0 60px #00e1ff;
+  transform:scale(1.1);
+}
+
+/* Section */
+.section{padding:80px 0;}
+.card{
+  background:#111; border:none; transition:0.4s; cursor:pointer;
+  transform-style: preserve-3d;
+}
+.card img{height:700px; object-fit:cover; transition:0.4s;}
+.card:hover{transform:scale(1.05) rotateY(10deg); box-shadow:0 0 20px #ff7b00,0 0 40px #ff7b00;}
+
+/* Power pulse */
+.power{
+  font-size:28px; color:#ff7b00; font-weight:bold;
+  animation: pulse 1.5s infinite alternate;
+}
+@keyframes pulse{
+  from{text-shadow:0 0 5px #ff7b00;}
+  to{text-shadow:0 0 20px #ff7b00;}
+}
+
+/* Ki Blast effect on click */
+.kamehameha{
+  position:relative; overflow:hidden;
+}
+.kamehameha::after{
+  content:""; position:absolute; top:50%; left:50%;
+  width:10px; height:10px; background:cyan; border-radius:50%;
+  transform:translate(-50%,-50%) scale(0);
+  opacity:.7; pointer-events:none;
+  transition:transform .5s ease-out,opacity .5s ease-out;
+}
+.kamehameha:active::after{
+  transform:translate(-50%,-50%) scale(20); opacity:0;
+}
+
+/* Card hover aura */
+.transform:hover{
+  filter:brightness(150%) drop-shadow(0 0 20px yellow);
+  transform:scale(1.1) rotateY(10deg);
+  transition:0.4s;
+}
+</style>
+</head>
+
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark">
+<div class="container">
+<a class="navbar-brand" href="#">SAIYAN POWER</a>
+<button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="nav">
+<ul class="navbar-nav ms-auto">
+<li class="nav-item"><a class="nav-link" href="#">Universe</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Saiyan History</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Battle Skills</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Z Fighters</a></li>
+<li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+</ul>
+</div>
+</div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+<div>
+<h5>WELCOME TO</h5>
+<h1 class="display-2 fw-bold saiyan-glow">DRAGON BALL Z</h1>
+<p class="lead">
+Enter the universe of Saiyan warriors and legendary battles.<br>
+Train hard and unlock your hidden power.
+</p>
+<button class="btn btn-primary btn-lg kamehameha">UNLEASH POWER</button>
+</div>
+</section>
+
+<!-- About -->
+<section class="section text-center">
+<div class="container">
+<h5 class="text-primary">SAIYAN STORY</h5>
+<h1 class="mb-4">Legend Of Saiyans</h1>
+<p class="lead">The Saiyan race is known as the strongest warriors in the universe.<br>
+From Planet Vegeta to Earth, powerful fighters protect the galaxy from deadly enemies.</p>
+<div class="row mt-5">
+<div class="col-md-4">
+<h4 class="text-primary">Saiyan Training</h4>
+<p>Master combat techniques and energy control.</p>
+</div>
+<div class="col-md-4">
+<h4 class="text-primary">Super Saiyan</h4>
+<p>Unlock powerful transformations.</p>
+</div>
+<div class="col-md-4">
+<h4 class="text-primary">Universe Protection</h4>
+<p>Fight powerful enemies and protect the galaxy.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Skills -->
+<section class="section bg-dark text-center">
+<div class="container">
+<h5 class="text-primary">BATTLE SKILLS</h5>
+<h1 class="mb-5">Saiyan Training Programs</h1>
+<div class="row">
+<div class="col-md-3">
+<h4>Kamehameha</h4>
+<p>Master the legendary energy blast.</p>
+</div>
+<div class="col-md-3">
+<h4>Super Saiyan</h4>
+<p>Transform and increase your power level.</p>
+</div>
+<div class="col-md-3">
+<h4>Ki Control</h4>
+<p>Harness internal energy to fight stronger.</p>
+</div>
+<div class="col-md-3">
+<h4>Battle Strategy</h4>
+<p>Train like the strongest warriors.</p>
+</div>
+</div>
+</div>
+</section>
+
+<!-- Fighters -->
+<section class="section">
+<div class="container text-center">
+<h5 class="text-primary">Z FIGHTERS</h5>
+<h1 class="mb-5">Meet The Warriors</h1>
+<div class="row g-4">
+
+<div class="col-md-3">
+<div class="card transform">
+<img src="images/goku.png" class="card-img-top">
+<div class="card-body">
+<h5>Goku</h5>
+<p>Legendary Saiyan Warrior</p>
+<p class="power">9000+</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card transform">
+<img src="images/vegeta.png" class="card-img-top">
+<div class="card-body">
+<h5>Vegeta</h5>
+<p>Prince Of Saiyans</p>
+<p class="power">8500+</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card transform">
+<img src="images/gohan.png" class="card-img-top">
+<div class="card-body">
+<h5>Gohan</h5>
+<p>Ultimate Fighter</p>
+<p class="power">7000+</p>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card transform">
+<img src="images/piccolo.png" class="card-img-top">
+<div class="card-body">
+<h5>Piccolo</h5>
+<p>Namekian Warrior</p>
+<p class="power">6500+</p>
+</div>
+</div>
+</div>
+
+</div>
+</div>
+</section>
+
+<!-- Join -->
+<section class="section bg-dark text-center">
+<div class="container">
+<h1 class="mb-3 saiyan-glow">Become A Super Saiyan</h1>
+<p class="lead">
+Join the Saiyan academy and unlock your true power level.
+</p>
+<button class="btn btn-primary btn-lg kamehameha">JOIN THE Z FIGHTERS</button>
+</div>
+</section>
+
+<!-- Footer -->
+<footer class="text-center p-4 bg-black">
+<h4 class="text-primary">Dragon Ball Z Universe</h4>
+<p>© 2026 All Rights Reserved</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
