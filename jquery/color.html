@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0%;
+            padding: 0%;
+
+        }
+        body{
+            background-color: black;
+            color: whitesmoke;
+        }
+        #box{
+            width: 200px;
+            height: 200px;
+            border: 5px solid rgb(255, 255, 255);
+            border-radius: 10px;
+             margin-top: 100px;
+            margin-bottom: 20px;
+            box-shadow: 10px 10px 30px rgb(0, 0, 0);
+
+        }
+        #btn{
+            width: 100px;
+            height: 40px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px rgb(0, 0, 0);
+        }
+
+        #btn2{
+            width: 100px;
+            height: 40px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px rgb(0, 0, 0);
+        }
+        #container{
+            width: 45vw;
+            height: 500px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            margin: auto;
+            background-color: rgba(195, 192, 189, 0.203);
+            box-shadow: 10px 10px 30px rgb(110, 109, 109);
+            margin-top: 200px;
+            border: 5px solid rgb(255, 255, 255);
+            border-radius: 30%;
+        }
+        h1{
+            text-align: center;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-top: 50px;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Random Color Generator</h1>
+<div id="container">
+    
+    <div id="box"></div>
+    <button id="btn">Generate</button>
+    <button id="btn2">Apply </button>
+</div>
+    <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+
+
+    <script>
+        $(document).ready (function(){
+            $("#btn").click(function(){
+                   var newColor = RandomColor();
+
+                    $("#box").css("background-color", newColor);
+
+                     $("#btn2").click(function(){
+                 $("body").css("background-color", newColor);
+            });
+            })
+
+           
+        });
+
+        function RandomColor() {
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
+    return "rgb(" + r + ", " + g + ", " + b + ")";
+}
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    div{
+        position: absolute;
+        
+    }
+    #btn{
+        width: 100px;
+            height: 40px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px rgb(0, 0, 0);
+        margin-top: 200px;
+
+    }
+    #btn2{
+            width: 100px;
+            height: 40px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px rgb(0, 0, 0);
+        margin-top: 200px; 
+        margin-left: 20px;
+    }
+</style>
+<body>
+<div><img src="images/car.gif" alt="car" width="300" ></div>
+
+<button id="btn">Move</button>
+<button id="btn2">back</button>
+      <script src="https://code.jquery.com/jquery-4.0.0.min.js" integrity="sha256-OaVG6prZf4v69dPg6PhVattBXkcOWQB62pdZ3ORyrao=" crossorigin="anonymous"></script>
+
+
+      <script>
+        $(document).ready(function(){
+            $("#btn").click(function(){
+                $("div").animate({
+                    left:"1700px"
+                },5000)
+                $("#btn2").click(function(){
+                    $("div").animate({
+                        left:"10px"
+                    },5000)
+                })
+            })
+        })
+      </script>
+</body>
+</html>
