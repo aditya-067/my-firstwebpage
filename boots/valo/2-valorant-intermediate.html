@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>document</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet"/>
+<style>
+:root { --red:#ff4655; --dark:#0f1923; --darker:#070d14; --mid:#1a2634; --light:#ece8e1; --gray:#768079; }
+*{box-sizing:border-box}
+body { background:var(--darker); color:var(--light); font-family:'Rajdhani',sans-serif; overflow-x:hidden; }
+::-webkit-scrollbar{width:4px}::-webkit-scrollbar-thumb{background:var(--red)}
+
+
+
+.navbar { 
+  background:rgba(7,13,20,0.97); 
+  border-bottom:2px solid var(--red);
+   padding:10px 0; 
+  }
+
+
+.navbar-brand {
+   font-family:'Oswald',sans-serif;
+    font-size:1.7rem;
+     color:var(--light)!important;
+      letter-spacing:5px; 
+    
+    }
+.navbar-brand span {
+  
+  color:var(--red);
+
+}
+.nav-link { 
+  
+  color:var(--gray)!important;
+   font-family:'Oswald',sans-serif;
+    letter-spacing:2px;
+     font-size:0.85rem; 
+     text-transform:uppercase;
+      transition:color .2s; 
+    
+    }
+.nav-link:hover {
+   color:var(--light)!important;
+   }
+.btn-play {
+  
+  background:var(--red);
+   color:#fff;
+    border:none; 
+    font-family:'Oswald',sans-serif;
+     letter-spacing:3px; 
+     font-size:0.9rem;
+      padding:8px 22px; 
+      text-transform:uppercase;
+       transition:background .2s;
+       }
+.btn-play:hover {
+   background:#cc3644;
+    color:#fff;
+   }
+
+
+
+.hero {
+   min-height:90vh;
+    background:var(--dark); 
+    display:flex;
+     align-items:center;
+      position:relative; 
+      overflow:hidden;
+     }
+.hero::after {
+   content:'';
+ position:absolute; 
+right:0; top:0;
+ bottom:0;
+ width:50%;
+ background:linear-gradient(135deg,transparent,rgba(255,70,85,0.07));
+ }
+.hero-grid {
+   position:absolute;
+   inset:0;
+   background-image:linear-gradient(rgba(255,70,85,0.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,70,85,0.04) 1px,transparent 1px);
+   background-size:50px 50px;
+ }
+.hero-eyebrow {
+   font-family:'Oswald',sans-serif;
+ font-size:0.75rem;
+ letter-spacing:5px;
+ color:var(--red);
+ margin-bottom:12px;
+ }
+.hero h1 {
+   font-family:'Oswald',sans-serif; 
+font-size:clamp(3rem,7vw,6rem);
+ font-weight:700; 
+line-height:0.9;
+ margin-bottom:20px;
+ }
+.hero h1 .outline {
+   -webkit-text-stroke:2px var(--light);
+   color:transparent;
+ }
+
+.hero h1 .red {
+   color:var(--red);
+ }
+.hero-sub { 
+  color:var(--gray);
+   font-size:1.05rem;
+   line-height:1.7;
+   max-width:440px;
+   margin-bottom:28px; 
+}
+.btn-primary-val { 
+  background:var(--red);
+   color:#fff;
+   border:none;
+   font-family:'Oswald',sans-serif;
+ font-size:0.95rem; 
+letter-spacing:3px; 
+padding:12px 32px;
+ text-transform:uppercase; 
+text-decoration:none;
+ display:inline-block;
+ transition:all .2s;
+ }
+.btn-primary-val:hover {
+   background:#cc3644;
+   color:#fff;
+   transform:translateY(-2px);
+ }
+.btn-ghost-val {
+   background:transparent; 
+  color:var(--light);
+   border:1.5px solid rgba(236,232,225,.35);
+   font-family:'Oswald',sans-serif; 
+font-size:0.95rem; 
+letter-spacing:3px;
+ padding:11px 32px;
+ text-transform:uppercase;
+ text-decoration:none;
+ display:inline-block;
+ transition:all .2s;
+ }
+.btn-ghost-val:hover {
+   border-color:var(--red);
+   color:var(--red);
+ }
+.stat-box {
+   border-left:3px solid var(--red); 
+  padding:8px 16px;
+ }
+.stat-num {
+   font-family:'Oswald',sans-serif;
+ font-size:1.8rem;
+ color:var(--red);
+ line-height:1;
+ }
+.stat-lbl { 
+  font-size:0.75rem;
+   letter-spacing:2px;
+   color:var(--gray);
+  text-transform:uppercase; 
+}
+
+
+.section-bg {
+   background:var(--dark);
+ }
+.section-bg2 {
+   background:var(--mid); 
+}
+.eyebrow {
+   font-family:'Oswald',sans-serif;
+ font-size:0.7rem; 
+letter-spacing:4px;
+ color:var(--red); margin-bottom:6px; 
+}
+.sec-title {
+   font-family:'Oswald',sans-serif;
+ font-size:clamp(2rem,4vw,3rem);
+ font-weight:700;
+ color:var(--light);
+ line-height:1;
+ margin-bottom:8px;
+ }
+.sec-title .outline {
+   -webkit-text-stroke:1.5px var(--light);
+   color:transparent;
+ }
+.line { 
+  width:50px;
+   height:2px;
+   background:var(--red);
+   margin:12px 0 20px;
+ }
+
+
+.agent-card {
+   background:var(--mid);
+   border:1px solid rgba(255,70,85,.15);
+   overflow:hidden;
+   transition:all .3s; position:relative;
+ }
+.agent-card:hover { 
+  border-color:var(--red);
+   transform:translateY(-5px); 
+}
+.agent-img {
+   height:240px;
+   overflow:hidden;
+   position:relative;
+ }
+.agent-img img {
+   width:100%;
+   height:100%;
+   object-fit:cover;
+   object-position:top;
+   transition:transform .5s;
+   filter:grayscale(30%);
+ }
+.agent-card:hover .agent-img img {
+   transform:scale(1.06); 
+  filter:grayscale(0);
+ }
+.agent-img-overlay {
+   position:absolute;
+   inset:0;
+   background:linear-gradient(to top,rgba(7,13,20,1) 0%,transparent 55%);
+ }
+.role-tag {
+   position:absolute;
+   top:12px;
+   right:12px; 
+  font-family:'Oswald',sans-serif;
+ font-size:0.7rem; 
+letter-spacing:2px;
+ padding:3px 10px;
+ text-transform:uppercase;
+ }
+.tag-duelist {
+   background:var(--red);
+   color:#fff;
+ }
+.tag-sentinel {
+   background:#0d9488;
+   color:#fff; 
+}
+.tag-controller {
+   background:#7c3aed; 
+  color:#fff;
+ }
+.tag-initiator {
+   background:#d97706;
+   color:#fff;
+ }
+.agent-body {
+   padding:14px 16px 18px;
+ }
+.agent-name {
+   font-family:'Oswald',sans-serif;
+ font-size:1.35rem;
+ letter-spacing:2px;
+ color:var(--light);
+ margin-bottom:4px;
+ }
+.agent-desc { 
+  font-size:0.85rem;
+   color:var(--gray);
+   line-height:1.5;
+   margin-bottom:10px;
+ }
+.ability-pills {
+  display:flex;
+   flex-wrap:wrap;
+   gap:5px; 
+}
+.ability-pill {
+   font-family:monospace;
+   font-size:0.6rem;
+   letter-spacing:1px;
+   border:1px solid rgba(255,70,85,.3);
+   color:var(--red);
+   padding:2px 7px;
+ }
+
+
+.map-card { 
+  position:relative;
+   overflow:hidden;
+   height:200px;
+   border:1px solid rgba(255,70,85,.1);
+   cursor:pointer; 
+  transition:border-color .3s;
+ }
+.map-card:hover { 
+  border-color:var(--red); 
+}
+.map-card img {
+   width:100%; height:100%; 
+  object-fit:cover;
+   transition:transform .5s,filter .3s; 
+  filter:brightness(.55) saturate(.6);
+ }
+.map-card:hover img {
+   transform:scale(1.05);
+   filter:brightness(.75) saturate(1);
+ }
+.map-info {
+   position:absolute; 
+  bottom:0; left:0;
+   right:0;
+   padding:14px 16px;
+   background:linear-gradient(to top,rgba(7,13,20,.98) 0%,transparent);
+ }
+.map-name {
+   font-family:'Oswald',sans-serif;
+ font-size:1.2rem;
+ letter-spacing:3px;
+ color:var(--light);
+ }
+.map-loc {
+   font-family:monospace;
+   font-size:0.65rem;
+   color:var(--red);
+   letter-spacing:2px; 
+}
+.map-type {
+   position:absolute;
+   top:10px; left:10px;
+   background:rgba(7,13,20,.85); 
+  border-left:2px solid var(--red);
+   font-family:monospace;
+   font-size:0.6rem;
+   color:var(--gray);
+   padding:3px 8px;
+   letter-spacing:2px;
+ }
+
+
+.weapon-row {
+   background:var(--mid); 
+  border:1px solid rgba(255,70,85,.1);
+   padding:16px 22px;
+   margin-bottom:2px;
+   display:flex; 
+  align-items:center; 
+  justify-content:space-between;
+   cursor:pointer;
+   transition:all .2s;
+   position:relative;
+ }
+.weapon-row::before {
+   content:'';
+ position:absolute;
+ left:0;
+ top:0;
+ bottom:0;
+ width:3px;
+ background:var(--red); 
+transform:scaleY(0);
+ transition:transform .2s; 
+}
+.weapon-row:hover {
+   background:#1e2d3d; 
+  border-color:rgba(255,70,85,.4);
+   padding-left:30px;
+ }
+.weapon-row:hover::before {
+   transform:scaleY(1); 
+}
+.wname {
+   font-family:'Oswald',sans-serif;
+ font-size:1.15rem;
+ letter-spacing:2px;
+ color:var(--light); 
+}
+.wtype {
+   font-family:monospace;
+   font-size:0.65rem;
+   letter-spacing:2px;
+   color:var(--gray);
+ }
+.wprice {
+   font-family:'Oswald',sans-serif;
+ font-size:1rem; 
+color:var(--red); 
+}
+.wdmg {
+   font-family:monospace;
+   font-size:0.7rem;
+   color:#00d4c8; 
+}
+
+
+.rank-card { 
+  background:var(--mid);
+   border:1px solid rgba(255,70,85,.15);
+   padding:20px 14px;
+   text-align:center; 
+  transition:all .3s;
+   position:relative; 
+  overflow:hidden; 
+}
+.rank-card::after { 
+  content:'';
+ position:absolute;
+ bottom:0;
+ left:0;
+ right:0;
+ height:3px;
+ background:var(--red); 
+transform:scaleX(0); 
+transition:transform .3s; 
+}
+.rank-card:hover {
+   border-color:var(--red);
+   transform:translateY(-4px);
+ }
+.rank-card:hover::after {
+   transform:scaleX(1);
+ }
+.rank-icon {
+   font-size:2rem;
+   margin-bottom:8px;
+ }
+.rank-name { 
+  font-family:'Oswald',sans-serif;
+ font-size:1rem;
+ letter-spacing:3px;
+ color:var(--light); 
+}
+.rank-rr {
+   font-family:monospace; 
+  font-size:0.65rem; 
+  color:var(--gray);
+   letter-spacing:1px;
+ }
+
+
+.cta-section { background:var(--red); padding:70px 0; position:relative; overflow:hidden; }
+.cta-section::before { content:''; position:absolute; inset:0; background-image:linear-gradient(rgba(255,255,255,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.04) 1px,transparent 1px); background-size:36px 36px; }
+.cta-title { font-family:'Oswald',sans-serif; font-size:clamp(2rem,5vw,4rem); color:var(--light); font-weight:700; letter-spacing:2px; }
+
+
+footer { background:var(--darker); border-top:1px solid rgba(255,70,85,.3); padding:40px 0 16px; }
+.footer-logo { font-family:'Oswald',sans-serif; font-size:1.8rem; letter-spacing:5px; font-weight:700; }
+.footer-logo span { color:var(--red); }
+.footer-head { font-family:'Oswald',sans-serif; font-size:0.85rem; letter-spacing:3px; color:var(--red); margin-bottom:12px; }
+.footer-link { display:block; color:var(--gray); font-size:0.9rem; text-decoration:none; line-height:2.2; transition:color .2s; }
+.footer-link:hover { color:var(--light); }
+.footer-bar { border-top:1px solid rgba(255,70,85,.15); margin-top:2rem; padding-top:1.2rem; text-align:center; font-family:monospace; font-size:0.65rem; color:var(--gray); letter-spacing:2px; }
+.footer-bar span { color:var(--red); }
+
+
+@keyframes fadeUp {
+
+   from{
+    opacity:0;
+    transform:translateY(22px)
+  } to{
+    opacity:1;
+    transform:translateY(0)
+  } 
+}
+.fade-up {
+   animation:fadeUp .6s ease both;
+   }
+.d1{
+  animation-delay:.1s
+}
+.d2{
+  animation-delay:.2s
+}
+.d3{
+  animation-delay:.3s
+}
+.d4{
+  animation-delay:.4s
+}
+
+.reveal { 
+  opacity:0;
+   transform:translateY(18px);
+   transition:opacity .5s ease,transform .5s ease;
+ }
+.reveal.visible {
+   opacity:1;
+ transform:translateY(0);
+ }
+</style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">VAL<span>O</span>RANT</a>
+    <button class="navbar-toggler border-danger" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto gap-1 align-items-center">
+        <li class="nav-item"><a class="nav-link" href="#agents">Agents</a></li>
+        <li class="nav-item"><a class="nav-link" href="#maps">Maps</a></li>
+        <li class="nav-item"><a class="nav-link" href="#weapons">Arsenal</a></li>
+        <li class="nav-item"><a class="nav-link" href="#ranks">Ranked</a></li>
+      </ul>
+      <button class="btn-play ms-3">Play Free →</button>
+    </div>
+  </div>
+</nav>
+
+
+<section class="hero">
+  <div class="hero-grid"></div>
+  <div class="container py-5 position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <p class="hero-eyebrow fade-up">// TACTICAL SHOOTER — 5V5 — FREE TO PLAY</p>
+        <h1 class="fade-up d1">DEFY<br><span class="outline">THE</span><br><span class="red">ODDS</span></h1>
+        <p class="hero-sub fade-up d2">5v5 character-based tactical FPS. Precise gunplay meets unique agent abilities. Every round is survival.</p>
+        <div class="d-flex gap-3 flex-wrap fade-up d3">
+          <a href="#" class="btn-primary-val">Play Now — Free</a>
+          <a href="#agents" class="btn-ghost-val">View Agents</a>
+        </div>
+        <div class="d-flex gap-4 mt-4 flex-wrap fade-up d4">
+          <div class="stat-box"><div class="stat-num">25M+</div><div class="stat-lbl">Players</div></div>
+          <div class="stat-box"><div class="stat-num">60+</div><div class="stat-lbl">Agents</div></div>
+          <div class="stat-box"><div class="stat-num">12</div><div class="stat-lbl">Maps</div></div>
+          <div class="stat-box"><div class="stat-num">Free</div><div class="stat-lbl">To Play</div></div>
+        </div>
+      </div>
+      <div class="col-lg-6 fade-up d2">
+        <div style="position:relative;border:1px solid rgba(255,70,85,.3);overflow:hidden">
+          <img src="img/jett p1.jpg" alt="Valorant" style="width:100%;height:420px;object-fit:cover;filter:brightness(.7)">
+          <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(7,13,20,.9) 0%,transparent 50%)"></div>
+          <div style="position:absolute;bottom:20px;left:20px;border-left:3px solid var(--red);padding-left:12px">
+            <div style="font-family:'Oswald',sans-serif;font-size:1.4rem;letter-spacing:2px">JETT</div>
+            <div style="font-family:monospace;font-size:0.65rem;color:var(--red);letter-spacing:3px">DUELIST — SOUTH KOREA</div>
+          </div>
+          <div style="position:absolute;top:16px;right:16px;background:var(--red);font-family:'Oswald',sans-serif;font-size:0.75rem;letter-spacing:2px;padding:4px 12px">FEATURED</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5 section-bg" id="agents">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-6">
+        <p class="eyebrow">// ROSTER</p>
+        <h2 class="sec-title">MEET THE <span class="outline">AGENTS</span></h2>
+        <div class="line"></div>
+        <p style="color:var(--gray);font-size:1rem;max-width:380px">Choose your playstyle. Master your abilities. Dominate the battlefield.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="agent-card">
+          <div class="agent-img">
+            <img src="img/Jett-Valorant-Agent.webp" alt="Jett">
+            <div class="agent-img-overlay"></div>
+            <span class="role-tag tag-duelist">Duelist</span>
+          </div>
+          <div class="agent-body">
+            <div class="agent-name">JETT</div>
+            <div class="agent-desc">Agile and evasive. Wind-based abilities let her dash in, eliminate, and escape.</div>
+            <div class="ability-pills">
+              <span class="ability-pill">UPDRAFT</span>
+              <span class="ability-pill">TAILWIND</span>
+              <span class="ability-pill">BLADE STORM</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="agent-card">
+          <div class="agent-img">
+            <img src="img/VALORANT_Sage_dark.main.webp" alt="Sage">
+            <div class="agent-img-overlay"></div>
+            <span class="role-tag tag-sentinel">Sentinel</span>
+          </div>
+          <div class="agent-body">
+            <div class="agent-name">SAGE</div>
+            <div class="agent-desc">China's stronghold. Heals allies, slows enemies, and can resurrect dead teammates.</div>
+            <div class="ability-pills">
+              <span class="ability-pill">SLOW ORB</span>
+              <span class="ability-pill">BARRIER ORB</span>
+              <span class="ability-pill">RESURRECTION</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="agent-card">
+          <div class="agent-img">
+            <img src="img/omen.webp" alt="Omen">
+            <div class="agent-img-overlay"></div>
+            <span class="role-tag tag-controller">Controller</span>
+          </div>
+          <div class="agent-body">
+            <div class="agent-name">OMEN</div>
+            <div class="agent-desc">A phantom of shadows who teleports and blinds enemies across the entire map.</div>
+            <div class="ability-pills">
+              <span class="ability-pill">DARK COVER</span>
+              <span class="ability-pill">SHROUDED STEP</span>
+              <span class="ability-pill">FROM THE SHADOWS</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3 reveal">
+        <div class="agent-card">
+          <div class="agent-img">
+            <img src="img/sova.webp" alt="Sova">
+            <div class="agent-img-overlay"></div>
+            <span class="role-tag tag-initiator">Initiator</span>
+          </div>
+          <div class="agent-body">
+            <div class="agent-name">SOVA</div>
+            <div class="agent-desc">Russian hunter who gathers enemy intelligence using recon arrows and owl drones.</div>
+            <div class="ability-pills">
+              <span class="ability-pill">RECON BOLT</span>
+              <span class="ability-pill">OWL DRONE</span>
+              <span class="ability-pill">HUNTER'S FURY</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5" id="maps" style="background:var(--darker)">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col">
+        <p class="eyebrow">// BATTLEGROUNDS</p>
+        <h2 class="sec-title">KNOW THE <span class="outline">MAPS</span></h2>
+        <div class="line"></div>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-md-6 col-lg-4 reveal"><div class="map-card"><img src="img/Loading_Screen_Ascent.webp" alt="Ascent"><div class="map-type">STANDARD</div><div class="map-info"><div class="map-name">ASCENT</div><div class="map-loc">// VENICE, ITALY</div></div></div></div>
+
+
+      <div class="col-md-6 col-lg-4 reveal"><div class="map-card"><img src="img/Loading_Screen_Bind.webp" alt="Bind"><div class="map-type">TELEPORTERS</div><div class="map-info"><div class="map-name">BIND</div><div class="map-loc">// MOROCCO</div></div></div></div>
+
+
+      <div class="col-md-6 col-lg-4 reveal"><div class="map-card"><img src="img/Loading_Screen_Haven.webp" alt="Haven"><div class="map-type">3 SITES</div><div class="map-info"><div class="map-name">HAVEN</div><div class="map-loc">// BHUTAN</div></div></div></div>
+
+      
+      <div class="col-md-6 col-lg-4 reveal"><div class="map-card"><img src="img/split.jpg" alt="Split"><div class="map-type">VERTICAL</div><div class="map-info"><div class="map-name">SPLIT</div><div class="map-loc">// TOKYO, JAPAN</div></div></div></div>
+
+
+
+      <div class="col-md-6 col-lg-4 reveal"><div class="map-card"><img src="img/icebox.jpg" alt="Icebox"><div class="map-type">STANDARD</div><div class="map-info"><div class="map-name">ICEBOX</div><div class="map-loc">// ARCTIC</div></div></div></div>
+
+
+
+
+      <div class="col-md-6 col-lg-4 reveal"><div class="map-card"><img src="img/Loading_Screen_Breeze.webp" alt="Breeze"><div class="map-type">OPEN</div><div class="map-info"><div class="map-name">BREEZE</div><div class="map-loc">// BERMUDA</div></div></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5 section-bg" id="weapons">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-6">
+        <p class="eyebrow">// ARSENAL</p>
+        <h2 class="sec-title">CHOOSE YOUR <span class="outline">WEAPON</span></h2>
+        <div class="line"></div>
+      </div>
+    </div>
+    <div class="row g-4">
+      <div class="col-lg-8">
+        <div class="weapon-row reveal"><div><div class="wname">VANDAL</div><div class="wtype">ASSAULT RIFLE</div></div><div class="text-end"><div class="wprice">2,900 CR</div><div class="wdmg">HEAD: 160 DMG</div></div></div>
+        <div class="weapon-row reveal"><div><div class="wname">PHANTOM</div><div class="wtype">ASSAULT RIFLE</div></div><div class="text-end"><div class="wprice">2,900 CR</div><div class="wdmg">HEAD: 156 DMG</div></div></div>
+        <div class="weapon-row reveal"><div><div class="wname">OPERATOR</div><div class="wtype">SNIPER RIFLE</div></div><div class="text-end"><div class="wprice">4,700 CR</div><div class="wdmg">HEAD: 255 DMG</div></div></div>
+        <div class="weapon-row reveal"><div><div class="wname">SHERIFF</div><div class="wtype">SIDEARM</div></div><div class="text-end"><div class="wprice">800 CR</div><div class="wdmg">HEAD: 159 DMG</div></div></div>
+        <div class="weapon-row reveal"><div><div class="wname">SPECTRE</div><div class="wtype">SUBMACHINE GUN</div></div><div class="text-end"><div class="wprice">1,600 CR</div><div class="wdmg">HEAD: 78 DMG</div></div></div>
+        <div class="weapon-row reveal"><div><div class="wname">JUDGE</div><div class="wtype">SHOTGUN</div></div><div class="text-end"><div class="wprice">1,850 CR</div><div class="wdmg">BODY: 17×12</div></div></div>
+      </div>
+      <div class="col-lg-4 reveal">
+        <div style="background:var(--mid);border:1px solid rgba(255,70,85,.2);padding:24px;height:100%">
+          <p class="eyebrow">// PRO TIP</p>
+          <h5 style="font-family:'Oswald',sans-serif;letter-spacing:2px;color:var(--light);margin-bottom:12px">CHOOSE WISELY</h5>
+          <p style="color:var(--gray);font-size:0.9rem;line-height:1.7">Vandal for one-taps. Phantom for spray. Operator for angles. Sheriff for eco clutches.</p>
+          <hr style="border-color:rgba(255,70,85,.2)">
+          <div style="font-size:0.85rem;line-height:2.2;color:var(--gray)">
+            Attack → <strong style="color:var(--light)">VANDAL</strong><br>
+            Defense → <strong style="color:var(--light)">PHANTOM</strong><br>
+            Eco Round → <strong style="color:var(--light)">SHERIFF</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5" id="ranks" style="background:var(--darker)">
+  <div class="container">
+    <div class="row mb-4">
+      <div class="col-lg-6">
+        <p class="eyebrow">// COMPETITIVE</p>
+        <h2 class="sec-title">CLIMB THE <span class="outline">RANKS</span></h2>
+        <div class="line"></div>
+      </div>
+    </div>
+    <div class="row g-3">
+      <div class="col-6 col-md-4 col-lg-2 reveal"><div class="rank-card"><div class="rank-icon"><img src="img/1854-valorant-iron-3.png" width="50%" alt=""></div><div class="rank-name">IRON</div><div class="rank-rr">0–300 RR</div></div></div>
+
+
+
+      <div class="col-6 col-md-4 col-lg-2 reveal"><div class="rank-card"><div class="rank-icon"><img src="img/4590-valorant-bronze-3.png" width="50%" alt=""></div><div class="rank-name">BRONZE</div><div class="rank-rr">300–600 RR</div></div></div>
+
+
+      <div class="col-6 col-md-4 col-lg-2 reveal"><div class="rank-card"><div class="rank-icon"><img src="img/3293-valorant-silver-3.png" width="50%" alt=""></div><div class="rank-name">SILVER</div><div class="rank-rr">600–900 RR</div></div></div>
+
+
+
+      <div class="col-6 col-md-4 col-lg-2 reveal"><div class="rank-card"><div class="rank-icon" style="color:#ffd700"><img src="img/3293-valorant-gold-3.png" width="50%" alt=""></div><div class="rank-name">GOLD</div><div class="rank-rr">900–1200 RR</div></div></div>
+
+
+      <div class="col-6 col-md-4 col-lg-2 reveal"><div class="rank-card"><div class="rank-icon"><img src="img/5816-valorant-platinum-3.png" width="50%" alt=""></div><div class="rank-name">PLATINUM</div><div class="rank-rr">1200–1500 RR</div></div></div>
+
+
+
+
+      <div class="col-6 col-md-4 col-lg-2 reveal"><div class="rank-card" style="border-color:rgba(255,70,85,.5)"><div class="rank-icon"><img src="img/5979-valorant-radiant.png" width="50%" alt=""></div><div class="rank-name" style="color:var(--red)">RADIANT</div><div class="rank-rr">TOP 500</div></div></div>
+    </div>
+  </div>
+</section>
+
+
+<section class="cta-section">
+  <div class="container text-center position-relative">
+    <p class="eyebrow" style="color:rgba(236,232,225,.6);justify-content:center;display:flex">// FREE TO PLAY</p>
+    <h2 class="cta-title mb-3">READY TO ENTER<br>THE PROTOCOL?</h2>
+    <p style="color:rgba(236,232,225,.8);font-size:1.1rem;margin-bottom:28px">25 million players worldwide. No cost. Pure competition.</p>
+    <div class="d-flex gap-3 justify-content-center flex-wrap">
+      <a href="#" style="background:#070d14;color:#ece8e1;font-family:'Oswald',sans-serif;font-size:1rem;letter-spacing:3px;padding:13px 34px;text-decoration:none;text-transform:uppercase;display:inline-block;transition:background .2s">Download Now</a>
+      <a href="#" style="background:transparent;color:#ece8e1;border:1.5px solid rgba(236,232,225,.5);font-family:'Oswald',sans-serif;font-size:1rem;letter-spacing:3px;padding:12px 34px;text-decoration:none;text-transform:uppercase;display:inline-block">Watch Trailer</a>
+    </div>
+  </div>
+</section>
+
+
+<footer>
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-lg-4">
+        <div class="footer-logo">VAL<span>O</span>RANT</div>
+        <p style="color:var(--gray);font-size:0.85rem;margin-top:12px;line-height:1.7">5v5 tactical FPS. Free to play. Defy the odds.</p>
+      </div>
+      <div class="col-6 col-lg-2"><div class="footer-head">Game</div><a href="#" class="footer-link">Agents</a><a href="#" class="footer-link">Maps</a><a href="#" class="footer-link">Arsenal</a><a href="#" class="footer-link">Ranked</a></div>
+      <div class="col-6 col-lg-2"><div class="footer-head">Esports</div><a href="#" class="footer-link">VCT 2025</a><a href="#" class="footer-link">Champions</a><a href="#" class="footer-link">Teams</a></div>
+      <div class="col-6 col-lg-2"><div class="footer-head">Support</div><a href="#" class="footer-link">Download</a><a href="#" class="footer-link">Patch Notes</a><a href="#" class="footer-link">Contact</a></div>
+      <div class="col-6 col-lg-2"><div class="footer-head">Follow</div><a href="#" class="footer-link">Twitter / X</a><a href="#" class="footer-link">Instagram</a><a href="#" class="footer-link">YouTube</a></div>
+    </div>
+    <div class="footer-bar">© 2025 <span>VALORANT</span> — Fan-made site. Not affiliated with Riot Games.</div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+const obs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+}, { threshold: 0.1 });
+document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
