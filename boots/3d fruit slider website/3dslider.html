@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+
+
+
+
+
+    <link
+  href="https://cdn.jsdelivr.net/npm/remixicon@4.9.0/fonts/remixicon.css"
+  rel="stylesheet"
+/>
+
+<link href="https://api.fontshare.com/v2/css?f[]=clash-display@500,600,700&display=swap" rel="stylesheet">
+
+
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css"
+/>
+    <title>Document</title>
+</head>
+<style>
+  :root {
+
+     --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(0, 0%, 0%);
+
+
+
+   --body-font: 'Clash Display', sans-serif;
+
+
+
+
+    --h1-font-size: 2rem;
+  --h2-font-size: 1.5rem;
+  --normal-font-size: 1rem;
+
+
+    --font-semibold: 600;
+  --font-bold: 700;
+}
+
+
+
+@media screen and (max-width: 1024px) {
+:root {
+      --h1-font-size: 1.5rem;
+      --h2-font-size: 1.25rem;
+      --normal-font-size: 0.938rem;
+}
+}
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  color: var(--black-color);
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+
+
+.header {
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background 0.3s ;
+  
+}
+.nav,
+.nav-list,
+.nav-actions {
+  display: flex;
+}
+
+.nav {
+ align-items: center;
+ justify-content: space-between;
+  height: 5.5rem;
+ max-width: 1568px;
+ margin-inline: auto;
+ padding-inline: 1rem;
+ 
+}
+
+
+.nav-logo
+  {
+    color: var(--white-color);
+    font-size: var(--h1-font-size);
+    font-weight: var(--font-bold);
+     transition: color 0.3s ;
+  }
+
+
+  .nav-list {
+    column-gap: 3.5rem;
+  }
+  .nav-link {
+    color: var(--black-color);
+  }
+
+  .nav-actions {
+    font-size: var(--h2-font-size);
+    column-gap: 1rem;
+  }
+
+  .nav-toggle,
+  .nav-close {
+    display: none;
+  }
+
+
+
+.bg-header{
+  background-color: var(--white-color);
+
+}
+
+.bg-header .nav-logo {
+  color: var(--black-color);
+}
+
+
+  .home {
+    min-height: 100dvh;
+    position: relative;
+  }
+
+  .home-data {
+    background-color: var(--background-color);
+  }
+
+  .home-title {
+    color: var(--white-color);
+    font-size: clamp(5.5rem, -1.1667rem + 33.3333vw, 28rem);
+    font-weight: var(--font-semibold);
+    position: absolute;
+    top: calc(50% - 4.25rem);
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+
+  }
+
+  .home-mockup {
+    position: absolute;
+    top: calc(50% + 2.25rem);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: clamp(9.375rem, 5.5568rem + 19.0909vw, 19.875rem);
+    aspect-ratio: 45 / 83;
+    --left: 0;
+  background: 
+  url(img/labels.png) var(--left) 0 / auto 100% no-repeat,
+  url(img/can.png) center / auto 100% no-repeat;
+    background-size: auto 100%;
+    background-blend-mode: multiply;
+    mask-image: url(img/can.png);
+    mask-size: auto 100%;
+    mask-repeat: no-repeat;
+    z-index: 100;
+    transition: background 1s ease-in;
+  }
+
+  .second-swiper {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+  }
+
+  .home-fruit-img {
+    width: 100%;
+     position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .home-button {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: var(--white-color);
+    padding: 1.25rem 2.25rem;
+    border-radius: 2rem;
+    color: var(--black-color);
+    font-weight:var(--font-semibold) ;
+    z-index: 100;
+  }
+  .swiper {
+    height: 100%;
+  }
+  
+  .swiper-wrapper {
+    transition: transform 0.6s ease-in;
+  }
+@media screen and (max-width: 1024px) {
+
+    .nav {
+      height: 3.5rem;
+    }
+
+  .nav-menu {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: var(--white-color);
+    width: 50%;
+    height: 100%;
+    padding: 6rem 3rem 0;
+    transition: right 0.3s;
+  }
+
+
+  .show-menu {
+    right: 0;
+  }
+
+  .nav-list {
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 2.5rem;
+  }
+
+  .nav-close,
+  .nav-toggle {
+    display: inline-flex;
+  }
+
+  .nav-close{
+    font-size: 1.5rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .nav-actions {
+    column-gap: 0.5rem;
+  }
+
+  .home-button {
+    padding: 1rem 2rem;
+  }
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+  .nav {
+    padding-inline: 0.75rem;
+  }
+
+  .nav-menu {
+    width: 80%;
+  }
+}
+
+
+
+#container {
+  width: 100vw;
+  display: inline-flex;
+  justify-content: space-evenly;
+}
+
+#ace{
+   font-size: 10px;
+   text-decoration: overline underline;
+   font-weight: 400;
+}
+.box{
+  display: flex;
+  justify-content: center;
+  flex-direction: column
+
+}
+
+.about-heading{
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 60px;
+  font-weight: 600;
+  text-decoration: overline;
+}
+
+
+.aboutus-content{
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+
+footer {
+  background: var(--black-color);
+  color: var(--white-color);
+  padding: 5rem 1.5rem 2rem;
+}
+.footer-inner { max-width: 1200px; margin-inline: auto; }
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid #222;
+  margin-bottom: 2rem;
+}
+.footer-brand h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  background: linear-gradient(135deg, hsl(79,66%,60%), hsl(79,66%,85%));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.footer-brand p { color: #888; line-height: 1.8; max-width: 280px; font-size: 0.9rem; margin-bottom: 1.5rem; }
+.footer-socials { display: flex; gap: 0.75rem; }
+.social-btn {
+  width: 2.5rem; height: 2.5rem;
+  border-radius: 50%;
+  background: #1a1a1a;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--white-color);
+  font-size: 1.1rem;
+  transition: background 0.2s, transform 0.2s;
+}
+.social-btn:hover { background: hsl(79,66%,60%); transform: translateY(-3px); }
+.footer-col h4 { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.15em; color: #888; margin-bottom: 1.25rem; }
+.footer-col ul li { margin-bottom: 0.75rem; }
+.footer-col ul li a { color: #ccc; font-size: 0.9rem; transition: color 0.2s; }
+.footer-col ul li a:hover { color: hsl(79,66%,60%); }
+.footer-newsletter { display: flex; gap: 0.5rem; margin-top: 0.5rem; }
+.footer-newsletter input {
+  flex: 1; padding: 0.7rem 1rem;
+  background: #1a1a1a; border: 1px solid #333; border-radius: 0.75rem;
+  color: white; font-family: var(--body-font); font-size: 0.85rem; outline: none;
+}
+.footer-newsletter input::placeholder { color: #555; }
+.footer-newsletter input:focus { border-color: hsl(79,66%,60%); }
+.footer-newsletter button {
+  padding: 0.7rem 1.1rem; background: hsl(79,66%,60%);
+  border: none; border-radius: 0.75rem; color: white; font-size: 1.1rem; cursor: pointer; transition: background 0.2s;
+}
+.footer-newsletter button:hover { background: hsl(79,66%,50%); }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; }
+.footer-bottom p { color: #555; font-size: 0.85rem; }
+.footer-bottom-links { display: flex; gap: 1.5rem; }
+.footer-bottom-links a { color: #555; font-size: 0.85rem; transition: color 0.2s; }
+.footer-bottom-links a:hover { color: hsl(79,66%,60%); }
+
+@media (max-width: 900px) {
+  .footer-top { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+  .footer-top { grid-template-columns: 1fr; }
+  .footer-bottom { flex-direction: column; align-items: flex-start; }
+}
+</style>
+<body>
+    <header class="header" id="header">
+      <nav class="nav">
+        <a href="#" class="nav-logo">Fruity</a>
+
+        <div class="nav-menu" id="nav-menu">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a href="#" class="nav-link">Shop</a>
+            </li>
+
+
+             <li class="nav-item">
+              <a href="#" class="nav-link">About</a>
+            </li>
+
+
+             <li class="nav-item">
+              <a href="#" class="nav-link">Product</a>
+            </li>
+
+
+
+             <li class="nav-item">
+              <a href="#" class="nav-link">Partnership</a>
+            </li>
+
+
+
+             <li class="nav-item">
+              <a href="#" class="nav-link">Contact</a>
+            </li>
+          </ul>
+
+          <div class="nav-close" id="nav-close">
+            <i class="ri-close-line"></i>
+          </div>
+
+
+        </div>
+
+        <div class="nav-actions">
+          <i class="ri-user-line"></i>
+          <i class="ri-shopping-cart-line"></i>
+          
+          <div class="nav-toggle" id="nav-toggle">
+            <i class="ri-menu-line"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="home" id="home">
+        <div class="swiper first-swiper">
+          <div class="swiper-wrapper">
+
+
+            <div class="swiper-slide home-data"
+            style="--background-color: hsl(79, 66%, 72%)">
+              <h1 class="home-title home-title-animate">Pear</h1>
+            </div>
+
+
+              <div class="swiper-slide home-data"  style="--background-color: hsl(0, 100%, 85%)">
+              <h1 class="home-title ">Apple</h1>
+            </div>
+
+
+              <div class="swiper-slide home-data"  style="--background-color: hsl(242, 66%, 85%)">
+              <h1 class="home-title">Exotic</h1>
+            </div>
+
+
+          </div>
+        </div>
+
+
+        <div class="home-mockup" id="home-mockup"></div>
+
+
+
+
+
+
+
+  <div class="swiper second-swiper">
+          <div class="swiper-wrapper">
+
+
+            <div class="swiper-slide home-fruit">
+              <img src="img/pears.png" alt="" class="home-fruit-img home-fruit-animate">
+        
+            </div>
+
+
+             <div class="swiper-slide home-fruit">
+              <img src="img/apples.png" alt="" class="home-fruit-img">
+        
+            </div>
+
+
+
+            <div class="swiper-slide home-fruit">
+              <img src="img/passion.png" alt="" class="home-fruit-img">
+        
+            </div>
+
+
+
+          </div>
+        </div>
+
+
+
+
+        <a href="#" class="home-button">Shop Taste</a>
+
+      </section>
+    </main>
+
+
+
+
+    <main class="second mt-5">
+
+
+      <div class="container box">
+<h1 class="about-heading">About Us </h1>
+<div>
+  <p class="aboutus-content">Fruit juice cider is an alcoholic beverage made by fermenting fruit juice—most commonly apple—using yeast to convert natural sugars into alcohol, typically resulting in a 3–7% ABV. It can be produced from pure juice or by adding yeast, sugar, and nutrients to pasteurized juice, often creating a crisp, dry, or bubbly beverage. Non-Alcoholic Apple Cider: In the U.S., this is simply raw, pressed apple juice that hasn't been filtered to remove pulp or sediment. Brands like Martinelli’s often use "juice" and "cider" interchangeably for marketing.</p>
+</div>
+
+      </div>
+
+
+<div id="container">
+
+
+
+        <div class="card " style="width: 18rem;">
+  <img src="img/img_0098.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><span id="ace">Ace</span> PINEAPPLE</h5>
+    <p class="card-text"> Pineapple Cider, a vibrant blend of Blue Ridge apples and pineapple juice. The resulting taste is off-dry and perfectly balanced to capture the best of pineapple while ensuring max drinkability. </p>
+   <p class="card-text">₹250</p>
+    <a href="#" class="btn btn-primary ">Buy Now</a>
+  </div>
+</div>
+
+
+
+
+
+        <div class="card " style="width: 18rem;">
+  <img src="img/img_2290-2.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><span id="ace">Ace</span>POMEGRANATE</h5>
+
+    <p class="card-text">The combination of fresh pomegranate, zesty ginger, and crisp apple cider with sparkling wine creates a balanced drink that's both refreshing and sophisticated.</p>
+    <p class="card-text">₹275</p>
+    <a href="#" class="btn btn-primary">Buy Now</a>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+        <div class="card " style="width: 18rem;">
+  <img src="img/untitled_design_25.png" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title"><span id="ace">Ace</span>PEACH</h5>
+     <p class="card-text"> Peach is crafted with the juice of sun-ripened peaches. This cider offers a perfect balance of sweetness and tartness, delivering a refreshing and delightful taste that captures the essence of summer in every sip.</p>
+    <p class="card-text">₹264</p>
+    <a href="#" class="btn btn-primary">Buy Now</a>
+  </div>
+</div>
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <div class="card text-center ">
+  <div class="card-header">
+    Featured
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Good Vibes in Every Bottle!</h5>
+    <p class="card-text">"Fresh Squeezed Happiness in Every Drop," "Sip on Sunshine," or "Nature's Best in a Bottle."
+      
+    </p>
+    <a href="#" class="btn btn-primary">About Us</a>
+  </div>
+  <div class="card-footer text-body-secondary">
+    
+  </div>
+</div>
+
+    </main>
+
+
+
+
+
+
+
+
+  
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h2>Fruity</h2>
+        <p>Nature ka best, bottle mein band. Har sip mein hai taazgi, meethas aur ek naya ehsaas.</p>
+        <div class="footer-socials">
+          <a href="#" class="social-btn"><i class="ri-instagram-line"></i></a>
+          <a href="#" class="social-btn"><i class="ri-twitter-x-line"></i></a>
+          <a href="#" class="social-btn"><i class="ri-facebook-line"></i></a>
+          <a href="#" class="social-btn"><i class="ri-youtube-line"></i></a>
+        </div>
+      </div>
+
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About Us</a></li>
+          <li><a href="#">Our Story</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Press</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#">Pear Cider</a></li>
+          <li><a href="#">Apple Cider</a></li>
+          <li><a href="#">Mango Cider</a></li>
+          <li><a href="#">Peach Cider</a></li>
+          <li><a href="#">Mixed Berry</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Newsletter</h4>
+        <p style="color:#888; font-size:0.85rem; margin-bottom:1rem; line-height:1.6;">Naye flavours aur offers sabse pehle pao!</p>
+        <div class="footer-newsletter">
+          <input type="email" placeholder="Email daalo...">
+          <button><i class="ri-arrow-right-line"></i></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2025 Fruity. Saare haq surakshit hain.</p>
+      <div class="footer-bottom-links">
+        <a href="#">Privacy Policy</a>
+        <a href="#">Terms of Use</a>
+        <a href="#">Refund Policy</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+
+
+
+
+  <script>
+
+    const navMenu = document.getElementById('nav-menu'),
+    navToggle = document.getElementById('nav-toggle'),
+    navClose = document.getElementById('nav-close');
+
+
+    navToggle.addEventListener('click', () => {
+      navMenu.classList.add('show-menu');
+    });
+
+
+
+        navClose.addEventListener('click', () => {
+      navMenu.classList.remove('show-menu');
+    });
+
+
+
+
+    const scrollHeader = () => {
+      const header = document.getElementById('header');
+
+      this.scrollY >= 50 ? header.classList.add('bg-header') 
+      :  header.classList.remove('bg-header') 
+    };
+
+
+    window.addEventListener('scroll', scrollHeader);
+
+
+
+
+
+
+
+    const  homeHeight = () => {
+      const home = document.getElementById('home');
+      const mockup  = document.getElementById('home-mockup');
+
+      home.style.height = `${mockup.offsetHeight + 313}px`;
+    };
+
+    window.addEventListener('load',homeHeight);
+    window.addEventListener('resize',homeHeight);
+
+
+
+
+
+     var firstSwiper = new Swiper(".first-swiper", {
+          loop: true,
+          speed: 1000,
+
+             autoplay: {
+        delay: 2500,
+        disableOnInteraction: false,
+      },
+
+      on: {
+        slideChange: function() {
+          const slideIndex = this.realIndex;
+          const isAtFirstSlide = slideIndex === 0;
+          const left = isAtFirstSlide ? 0.25 : slideIndex * 50;
+
+          const mockupImage = document.getElementById('home-mockup');
+          mockupImage.style.setProperty('--left', `${left}%`);
+        }
+      }
+     });
+
+
+
+
+       var secondSwiper = new Swiper(".second-swiper", {
+        loop:true,
+      direction: "vertical",
+    });
+
+
+   firstSwiper.controller.control = secondSwiper;
+   secondSwiper.controller.control = firstSwiper;
+
+
+
+    gsap.from('.home-title-animate' ,{
+      x:1000,
+      duration: 1,
+      ease:'power1.in',
+    });
+
+
+        gsap.from('.home-fruit-animate' ,{
+      y:1000,
+      duration: 1,
+      ease:'power1.in',
+    });
+  </script>
+</body>
+</html>
